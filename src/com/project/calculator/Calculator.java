@@ -20,6 +20,7 @@ public class Calculator {
         System.out.println("두번째 숫자를 입력해주세요 : ");
         int lastInputNum = sc.nextInt();
 
+        /* if문
         if (oper == '+') {
             System.out.println(firstInputNum + " + " + lastInputNum + " = " + (firstInputNum + lastInputNum));
         } else if (oper == '-') {
@@ -38,6 +39,29 @@ public class Calculator {
             }
             System.out.println(firstInputNum + " / " + lastInputNum + " = " + (firstInputNum / lastInputNum));
         }
+         */
+
+        switch (oper) {
+            case '+' -> System.out.println(firstInputNum + " + " + lastInputNum + " = " + (firstInputNum + lastInputNum));
+            case '-' -> System.out.println(firstInputNum + " - " + lastInputNum + " = " + (firstInputNum - lastInputNum));
+            case '*' -> {
+                // 두번째 숫자가 0 일때, 다시 입력 받기
+                while (lastInputNum == 0) {
+                    System.out.println("0으로 곱할 수 없습니다. 다시 입력해주세요 : ");
+                    lastInputNum = sc.nextInt();
+                }
+                System.out.println(firstInputNum + " * " + lastInputNum + " = " + (firstInputNum * lastInputNum));
+            }
+            case '/' -> {
+                // 두번째 숫자가 0 일때, 다시 입력 받기
+                while (lastInputNum == 0) {
+                    System.out.println("0으로 나눌 수 없습니다. 다시 입력해주세요 : ");
+                    lastInputNum = sc.nextInt();
+                }
+                System.out.println(firstInputNum + " / " + lastInputNum + " = " + (firstInputNum / lastInputNum));
+            }
+        }
+        
 
 
     }
