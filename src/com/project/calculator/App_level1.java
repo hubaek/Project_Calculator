@@ -2,7 +2,8 @@ package com.project.calculator;
 
 import java.util.Scanner;
 
-public class App {
+public class App_level1 {
+
     public static void main(String[] args) {
 
         /*
@@ -78,13 +79,13 @@ public class App {
             }
 
             System.out.println("더 계산하시겠습니까? (yes/no)" );
-            String endApp = sc.next();
+            String end = sc.next();
 
             // 계산기 종료 로직
-            if (endApp.equals("no")) {
+            if (end.equals("no")) {
                 System.out.println("계산기를 종료합니다.");
                 break;
-            } else if (endApp.equals("yes")){
+            } else if (end.equals("yes")){
                 continue;
             }
         }
