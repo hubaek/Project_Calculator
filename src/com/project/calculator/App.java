@@ -84,11 +84,13 @@ public class App {
             }
         }
 
-        System.out.println(calculator.getResultList().toString());
         // 컬렉션 첫번째 값 제거하기
-        calculator.removeResultList();
-        System.out.println(calculator.getResultList().toString());
-
+        try {
+            calculator.removeResultList();
+            System.out.println(calculator.getResultList().toString());
+        } catch (IndexOutOfBoundsException e) {
+            System.out.println("예외 : " + e.getMessage());
+        }
     }
 
 }

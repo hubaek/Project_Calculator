@@ -2,7 +2,6 @@ package com.project.calculator;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 public class Calculator {
 
@@ -12,7 +11,7 @@ public class Calculator {
 //    public char operator;   // 연산 기호
 
     // 연산 결과를 저장하는 컬렉션 타입 필드
-    private final List<Double> resultList = new ArrayList<>();
+    private List<Double> resultList = new ArrayList<>();
 
 
 
@@ -49,13 +48,23 @@ public class Calculator {
 
     // 연산 결과를 반환하는 메서드
     public List<Double> getResultList(){
+        if (resultList.isEmpty()) {
+            throw new IndexOutOfBoundsException("저장된 연산 결과가 없습니다.");
+        }
         return resultList;
     }
 
+    public void setResultList() {
+        this.resultList = resultList;
+    }
+
     // 저장된 연산 결과 가장 먼저 저장된 데이터를 삭제하는 메서드
-    public List<Double> removeResultList() {
+    public void removeResultList() {
+        // 연산결과가 비어 있을 때 삭제하면 예외
+        if (resultList.isEmpty()) {
+            throw new IndexOutOfBoundsException("저장된 연산 결과가 없습니다.");
+        }
         resultList.remove(0);
-        return resultList;
     }
 
 
