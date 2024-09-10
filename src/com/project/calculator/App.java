@@ -27,10 +27,10 @@ public class App {
         }
          */
 
+        Calculator calculator = new Calculator();
+
         // 종료 입력시까지 계산기 프로그램 반복
         while (true) {
-
-            Calculator calculator = new Calculator();
 
             // Scanner활용 - 양의 정수(0포함) 입력받기
             Scanner sc = new Scanner(System.in);
@@ -64,7 +64,7 @@ public class App {
             int lastInputNum = sc.nextInt();
 
 
-            // 사칙연산 해당 기호마다 계산식
+            // 입력한 정수 2개와 연산기호를 calculator 클래스의 메서드 호출로 사칙연산 계산
             try {
                 double result = calculator.arithmeticOperation(firstInputNum, lastInputNum, operator);
                 System.out.println("결과 : " + result);
@@ -73,7 +73,6 @@ public class App {
                 System.out.println("오류 : " + e.getMessage());
             }
 
-            System.out.println(calculator.getResultList());
 
             System.out.println("더 계산하시겠습니까? (yes/no)" );
             String endApp = sc.next();
@@ -82,10 +81,14 @@ public class App {
             if (endApp.equals("no")) {
                 System.out.println("계산기를 종료합니다.");
                 break;
-            } else if (endApp.equals("yes")){
-                continue;
             }
         }
+
+        System.out.println(calculator.getResultList().toString());
+        // 컬렉션 첫번째 값 제거하기
+        calculator.removeResultList();
+        System.out.println(calculator.getResultList().toString());
+
     }
 
 }

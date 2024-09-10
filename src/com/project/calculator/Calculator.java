@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Calculator {
-    Scanner sc = new Scanner(System.in);
 
     // 필드 선언부 -> 메서드에서 매개변수로 받기에 필요 없다?
 //    public int firstInputNum; // 첫번째 입력 정수
@@ -13,7 +12,7 @@ public class Calculator {
 //    public char operator;   // 연산 기호
 
     // 연산 결과를 저장하는 컬렉션 타입 필드
-    private List<Double> resultList = new ArrayList<Double>();
+    private final List<Double> resultList = new ArrayList<>();
 
 
 
@@ -53,6 +52,11 @@ public class Calculator {
         return resultList;
     }
 
+    // 저장된 연산 결과 가장 먼저 저장된 데이터를 삭제하는 메서드
+    public List<Double> removeResultList() {
+        resultList.remove(0);
+        return resultList;
+    }
 
 
 
