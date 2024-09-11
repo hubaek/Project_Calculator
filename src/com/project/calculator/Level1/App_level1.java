@@ -1,4 +1,4 @@
-package com.project.calculator;
+package com.project.calculator.Level1;
 
 import java.util.Scanner;
 

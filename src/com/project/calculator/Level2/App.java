@@ -1,4 +1,4 @@
-package com.project.calculator;
+package com.project.calculator.Level2;
 
 import java.util.Scanner;
 
@@ -47,7 +47,7 @@ public class App {
 
             /*
             // 4가지 기호 외에 들어오면 정확한 기호를 입력해 주세요 경고하고, 다시 입력 필요 (x)
-            * Calculator 클래스에 IllegalArgumentException 예외처리
+            * Calculator 클래스에 IllegalArgumentException 예외처리로 대체, 이코드도 쓰는게 맞을까? 고민
             while (true) {
                 operator = sc.nextLine().charAt(0);
                 if (operator == '+' || operator == '-' || operator == '*' || operator == '/') {
